@@ -1,3 +1,20 @@
+# How To Run Locally
+
+Run docker-compose
+```bash
+docker-compose up -d
+```
+
+Have [LiveServer](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer) running for `index.html` 
+
+- Go into `http://localhost:5500` (usually the default port for LiveServer)
+- Specificy `?room=<roomId>&username=>user>`
+- Chat
+- Open multiple tabs
+
+Via RabbitMQ Management UI - you can check the connects/created accounts
+
+
 # How it works (no charts hehe)
 
 - Client (index.html - you can use LiveServer to run this) https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
