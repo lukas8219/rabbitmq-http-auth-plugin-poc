@@ -1,0 +1,18 @@
+services:
+  rabbitmq:
+    image: rabbitmq:latest
+    hostname: rabbitmq
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+    volumes:
+      - ./advanced.config:/etc/rabbitmq/advanced.config
+      - ./enabled_plugins:/etc/rabbitmq/enabled_plugins
+    environment:
+      RABBITMQ_DEFAULT_USER: lucas
+      RABBITMQ_DEFAULT_PASS: local
+  rabbit-tcp-relay:
+    image: cloudamqp/websocket-tcp-relay
+    ports:
+      - "15670:15670"
+    command: websocket-tcp-relay --upstream tcp://rabbitmq:5672
